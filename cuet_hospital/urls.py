@@ -8,5 +8,3 @@ urlpatterns = [
     path('doctor/', include('patients.urls')),
 ]
 
-# accounts/login
-# accounts/register

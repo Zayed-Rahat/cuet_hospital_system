@@ -18,4 +18,3 @@ class PatientForm(forms.ModelForm):
                     'focus:bg-white focus:border-gray-500'
                 ) 
             })
-        # Add custom form field configurations or widgets here if needed

@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head_title %}Hospital System{% endblock %} {% block content %}
+<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+
+    
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
+        <h1 class="font-bold text-2xl my-4">Welcome to CUET Hospital</h1>
+        <p class="leading-normal mb-4 font-semibold text-green-600">
+           Top Five Patient 
+        </p>
+
+        {% for patient in patients|slice:":5" %}
+        <ul class="list-none">
+            <li class="p-2 border rounded-md shadow-md hover:shadow-lg">
+                <span class="text-lg font-semibold">{{ patient.name }}</span>
+                <span class="block text-sm text-gray-600">From: {{ patient.address }}</span>
+            </li>
+        </ul>
+        {% empty %}
+        <p>No patients found.</p>
+        {% endfor %}
+
+    </div>
+    <div class="w-full lg:w-1/2 lg:py-6 text-center ">
+        <img class ="rounded-2xl" src ="{% static './img/Hospital.jpg' %}"/>
+    </div>
+</div>
+
+{% endblock %}
